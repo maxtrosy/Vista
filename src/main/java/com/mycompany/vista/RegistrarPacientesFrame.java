@@ -902,7 +902,6 @@ public class RegistrarPacientesFrame extends javax.swing.JFrame {
         BoxDia.setText("");
         BoxMes.setText("");
         BoxAño.setText("");
-        BoxMedico.setText("");
     }
 
     private boolean validarCantidadCitas(int idMedico) {
@@ -968,37 +967,34 @@ public class RegistrarPacientesFrame extends javax.swing.JFrame {
     }
 
     private boolean validarMismaEspecialidadMismoMes(String cedulaPaciente, String especialidad, int mes) {
-        File archivoCitas = new File("PacienteRecords.txt");
-        if (!archivoCitas.exists()) {
-            JOptionPane.showMessageDialog(null, "El archivo PacienteRecords.txt no existe");
-            return false;
-        }
-
-        try (BufferedReader lector = new BufferedReader(new FileReader(archivoCitas))) {
-            String linea;
-            while ((linea = lector.readLine()) != null) {
-                String[] campos = linea.split(";");
-                if (campos[4].equals(cedulaPaciente)) {
-                    String fechaCita = campos[6];
-                    // Verificar que la cadena de fecha tenga al menos 6 caracteres
-                    if (fechaCita.length() >= 6) {
-                        // Extraer el mes de la cadena de fecha
-                        int mesCita = Integer.parseInt(fechaCita.substring(2, 4).replaceFirst("^0+(?!$)", "")); // Remover ceros a la izquierda
-                        String especialidadCita = campos[2];
-                        if (mesCita == mes && especialidadCita.equals(especialidad)) {
-
-                        }
-                    } else {
-
-                    }
-                }
-            }
-        } catch (IOException e) {
-            JOptionPane.showMessageDialog(null, "Error al leer el archivo CitasRecords.txt");
-            e.printStackTrace();
-        }
+    File archivoCitas = new File("PacienteRecords.txt");
+    if (!archivoCitas.exists()) {
+        JOptionPane.showMessageDialog(null, "El archivo PacienteRecords.txt no existe");
         return false;
     }
+
+    try (BufferedReader lector = new BufferedReader(new FileReader(archivoCitas))) {
+        String linea;
+        while ((linea = lector.readLine()) != null) {
+            String[] campos = linea.split(";");
+            if (campos[4].equals(cedulaPaciente) && campos[2].equals(especialidad)) {
+                String fechaCita = campos[6];
+                int diaCita = Integer.parseInt(fechaCita.substring(0, 2));
+                int mesCita = Integer.parseInt(fechaCita.substring(2, 4));
+                int añoCita = Integer.parseInt(fechaCita.substring(4, 8));
+
+                if (mesCita == mes) {
+                    JOptionPane.showMessageDialog(null, "Ya tiene una cita registrada para esta especialidad en este mes.");
+                    return true;
+                }
+            }
+        }
+    } catch (IOException e) {
+        JOptionPane.showMessageDialog(null, "Error al leer el archivo CitasRecords.txt");
+        e.printStackTrace();
+    }
+    return false;
+}
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

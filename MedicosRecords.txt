@@ -8,7 +8,11 @@
 0007;Sofia;Gomez;Psiquiatría;1001008;3001001008;0
 0008;Luis;Diaz;Traumatología;1001009;3001001009;0
 0009;Elena;Torres;Urología;1001010;3001001010;0
+<<<<<<< HEAD
 0010;Martin;Hernandez;Cardiología;1001011;3001001011;6
+=======
+0010;Martin;Hernandez;Cardiología;1001011;3001001011;1
+>>>>>>> parent of 2d4500f (Validacion cita el mismo mes)
 0011;Gabriela;Gonzalez;Dermatología;1001012;3001001012;0
 0012;Javier;Ramirez;Endocrinología;1001013;3001001013;0
 0013;Valeria;Alvarez;Gastroenterología;1001014;3001001014;0
@@ -18,7 +22,7 @@
 0017;Camila;Pereira;Psiquiatría;1001018;3001001018;0
 0018;Jose;Silva;Traumatología;1001019;3001001019;0
 0019;Fernanda;Castro;Urología;1001020;3001001020;0
-0020;Pablo;Chavez;Cardiología;1001021;3001001021;3
+0020;Pablo;Chavez;Cardiología;1001021;3001001021;1
 0021;Martina;Rojas;Dermatología;1001022;3001001022;0
 0022;Sebastian;Luna;Endocrinología;1001023;3001001023;0
 0023;Lucia;Gutierrez;Gastroenterología;1001024;3001001024;0
@@ -28,7 +32,11 @@
 0027;Isabella;Cabrera;Psiquiatría;1001028;3001001028;0
 0028;Agustin;Santos;Traumatología;1001029;3001001029;0
 0029;Emilia;Blanco;Urología;1001030;3001001030;0
+<<<<<<< HEAD
 0030;Julian;Martinez;Cardiología;1001031;3001001031;4
+=======
+0030;Julian;Martinez;Cardiología;1001031;3001001031;1
+>>>>>>> parent of 2d4500f (Validacion cita el mismo mes)
 0031;Valentina;Gonzalez;Dermatología;1001032;3001001032;0
 0032;Nicolas;Ramirez;Endocrinología;1001033;3001001033;0
 0033;Antonella;Alvarez;Gastroenterología;1001034;3001001034;0
@@ -38,7 +46,7 @@
 0037;Catalina;Pereira;Psiquiatría;1001038;3001001038;0
 0038;Santiago;Silva;Traumatología;1001039;3001001039;0
 0039;Isidora;Castro;Urología;1001040;3001001040;0
-0040;Maximiliano;Chavez;Cardiología;1001041;3001001041;2
+0040;Maximiliano;Chavez;Cardiología;1001041;3001001041;0
 0041;Antonia;Rojas;Dermatología;1001042;3001001042;0
 0042;Matias;Luna;Endocrinología;1001043;3001001043;0
 0043;Emilia;Gutierrez;Gastroenterología;1001044;3001001044;0
