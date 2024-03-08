@@ -9,7 +9,11 @@
 0008;Luis;Diaz;Traumatología;1001009;3001001009;0
 0009;Elena;Torres;Urología;1001010;3001001010;0
 <<<<<<< HEAD
+<<<<<<< HEAD
 0010;Martin;Hernandez;Cardiología;1001011;3001001011;6
+=======
+0010;Martin;Hernandez;Cardiología;1001011;3001001011;1
+>>>>>>> parent of 2d4500f (Validacion cita el mismo mes)
 =======
 0010;Martin;Hernandez;Cardiología;1001011;3001001011;1
 >>>>>>> parent of 2d4500f (Validacion cita el mismo mes)
@@ -33,7 +37,11 @@
 0028;Agustin;Santos;Traumatología;1001029;3001001029;0
 0029;Emilia;Blanco;Urología;1001030;3001001030;0
 <<<<<<< HEAD
+<<<<<<< HEAD
 0030;Julian;Martinez;Cardiología;1001031;3001001031;4
+=======
+0030;Julian;Martinez;Cardiología;1001031;3001001031;1
+>>>>>>> parent of 2d4500f (Validacion cita el mismo mes)
 =======
 0030;Julian;Martinez;Cardiología;1001031;3001001031;1
 >>>>>>> parent of 2d4500f (Validacion cita el mismo mes)

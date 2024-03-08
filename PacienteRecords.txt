@@ -11,9 +11,14 @@ dasdas;dasdas;Neurología;0004;4324323;32423;31032024
 fdsf;sdfdsf;Cardiología;0000;32432;432432;452024
 Zahir;Acosta;Cardiología;0010;1042249684;3022685979;2032024
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 sfsd;fdsf;Cardiología;0000;324324;324324;1712206800000
 asdas;dsadas;Cardiología;0000;324324;32432;1714798800000
+=======
+Zahir;Acosta;Cardiología;0020;1042249684;3022685979;2332024
+Zahir;Acosta;Cardiología;0030;1042249684;3022685979;2532024
+>>>>>>> parent of 2d4500f (Validacion cita el mismo mes)
 =======
 Zahir;Acosta;Cardiología;0020;1042249684;3022685979;2332024
 Zahir;Acosta;Cardiología;0030;1042249684;3022685979;2532024
