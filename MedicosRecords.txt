@@ -8,7 +8,7 @@
 0007;Sofia;Gomez;Psiquiatría;1001008;3001001008;0
 0008;Luis;Diaz;Traumatología;1001009;3001001009;0
 0009;Elena;Torres;Urología;1001010;3001001010;0
-0010;Martin;Hernandez;Cardiología;1001011;3001001011;0
+0010;Martin;Hernandez;Cardiología;1001011;3001001011;1
 0011;Gabriela;Gonzalez;Dermatología;1001012;3001001012;0
 0012;Javier;Ramirez;Endocrinología;1001013;3001001013;0
 0013;Valeria;Alvarez;Gastroenterología;1001014;3001001014;0
@@ -18,7 +18,7 @@
 0017;Camila;Pereira;Psiquiatría;1001018;3001001018;0
 0018;Jose;Silva;Traumatología;1001019;3001001019;0
 0019;Fernanda;Castro;Urología;1001020;3001001020;0
-0020;Pablo;Chavez;Cardiología;1001021;3001001021;0
+0020;Pablo;Chavez;Cardiología;1001021;3001001021;1
 0021;Martina;Rojas;Dermatología;1001022;3001001022;0
 0022;Sebastian;Luna;Endocrinología;1001023;3001001023;0
 0023;Lucia;Gutierrez;Gastroenterología;1001024;3001001024;0
@@ -28,7 +28,7 @@
 0027;Isabella;Cabrera;Psiquiatría;1001028;3001001028;0
 0028;Agustin;Santos;Traumatología;1001029;3001001029;0
 0029;Emilia;Blanco;Urología;1001030;3001001030;0
-0030;Julian;Martinez;Cardiología;1001031;3001001031;0
+0030;Julian;Martinez;Cardiología;1001031;3001001031;1
 0031;Valentina;Gonzalez;Dermatología;1001032;3001001032;0
 0032;Nicolas;Ramirez;Endocrinología;1001033;3001001033;0
 0033;Antonella;Alvarez;Gastroenterología;1001034;3001001034;0

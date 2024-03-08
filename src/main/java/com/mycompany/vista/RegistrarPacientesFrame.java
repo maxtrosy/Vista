@@ -701,69 +701,71 @@ public class RegistrarPacientesFrame extends javax.swing.JFrame {
 
     private void AsignarCitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AsignarCitaActionPerformed
 
-         Boolean idVerified = false;
+        boolean idVerified = false;
 
-    for (int i : idMedicosDisponibles) {
-        if (Integer.valueOf(BoxMedico.getText()) == i) {
-            idVerified = true;
-        }
-    }
-
-    if (nombre.getText().isEmpty()
-            || apellido.getText().isEmpty()
-            || BoxEspecialidad.getSelectedItem() == null // Verificar si no se ha seleccionado una especialidad
-            || BoxMedico.getText().isEmpty()
-            || cedula.getText().isEmpty()
-            || telefono.getText().isEmpty()
-            || BoxDia.getText().isEmpty()
-            || BoxMes.getText().isEmpty()
-            || BoxAño.getText().isEmpty()) {
-
-        JOptionPane.showMessageDialog(null, "Complete todos los campos.");
-    } else {
-        int dia = Integer.parseInt(BoxDia.getText());
-        int mes = Integer.parseInt(BoxMes.getText());
-        int año = Integer.parseInt(BoxAño.getText());
-        LocalDate fechaActual = LocalDate.now();
-        LocalDate fechaSeleccionada = LocalDate.of(año, mes, dia);
-        // Validar dia, mes y año
-        if (dia < 0 || dia > 31 || mes < 0 || mes > 12 || año != 2024) {
-            JOptionPane.showMessageDialog(null, "Fecha Inválida. Ingrese una válida.");
-        } else if (fechaSeleccionada.isBefore(fechaActual)) {
-            JOptionPane.showMessageDialog(null, "La fecha seleccionada es anterior a la fecha actual.");
-        } else if (!idVerified) {
-            JOptionPane.showMessageDialog(null, "ID Inválido. Ingrese uno válido.");
-        } else if (!validarCantidadCitas(Integer.parseInt(BoxMedico.getText()))) {
-            JOptionPane.showMessageDialog(null, "El médico seleccionado ya tiene 10 citas atendidas. No se pueden asignar más citas.");
-        } else {
-            try {
-                // Crear un nuevo objeto Paciente
-                Pacientes paciente = new Pacientes();
-
-                // Configurar los atributos del paciente con los valores de los campos
-                paciente.setNombre(nombre.getText());
-                paciente.setApellido(apellido.getText());
-                paciente.setEspecialidad(BoxEspecialidad.getSelectedItem().toString()); // Obtener la especialidad seleccionada del JComboBox
-                paciente.setDoctor(BoxMedico.getText());
-                paciente.setCedula(Long.parseLong(cedula.getText()));
-                paciente.setTelefono(Long.parseLong(telefono.getText()));
-                paciente.setFecha(Long.parseLong(BoxDia.getText() + BoxMes.getText() + BoxAño.getText()));
-
-                // Guardar la información del paciente en el archivo PacienteRecords.txt
-                guardarPacienteEnArchivo(paciente);
-
-                guardarCitaMedico(Integer.parseInt(BoxMedico.getText()));
-                // Limpia los campos después de crear el paciente (opcional)
-                limpiarCampos();
-
-                JOptionPane.showMessageDialog(null, "Paciente registrado correctamente.");
-            } catch (NumberFormatException e) {
-                // Manejar el caso en que no se pueda convertir algún campo de texto a número
-                JOptionPane.showMessageDialog(null, "Error: Ingrese valores numéricos válidos en los campos de cédula, teléfono y fecha.");
+        for (int i : idMedicosDisponibles) {
+            if (Integer.valueOf(BoxMedico.getText()) == i) {
+                idVerified = true;
             }
-
-            cargarDatosEnTabla(allPData12);
         }
+
+        if (nombre.getText().isEmpty()
+                || apellido.getText().isEmpty()
+                || BoxEspecialidad.getSelectedItem() == null // Verificar si no se ha seleccionado una especialidad
+                || BoxMedico.getText().isEmpty()
+                || cedula.getText().isEmpty()
+                || telefono.getText().isEmpty()
+                || BoxDia.getText().isEmpty()
+                || BoxMes.getText().isEmpty()
+                || BoxAño.getText().isEmpty()) {
+
+            JOptionPane.showMessageDialog(null, "Complete todos los campos.");
+        } else {
+            int dia = Integer.parseInt(BoxDia.getText());
+            int mes = Integer.parseInt(BoxMes.getText());
+            int año = Integer.parseInt(BoxAño.getText());
+            LocalDate fechaActual = LocalDate.now();
+            LocalDate fechaSeleccionada = LocalDate.of(año, mes, dia);
+
+            // Validar dia, mes y año
+            if (dia < 0 || dia > 31 || mes < 0 || mes > 12 || año != 2024 || fechaSeleccionada.isBefore(fechaActual)) {
+                JOptionPane.showMessageDialog(null, "Fecha Invalida. Ingrese una valida");
+            } else if (!idVerified) {
+                JOptionPane.showMessageDialog(null, "Id Invalida. Ingrese una valida");
+            } else if (validarCantidadCitas(Integer.parseInt(BoxMedico.getText()))) {
+                JOptionPane.showMessageDialog(null, "El médico ya ha alcanzado el límite de citas.");
+            } else if (validarMismaEspecialidadMismoMes(cedula.getText(), BoxEspecialidad.getSelectedItem().toString(), mes)) {
+                JOptionPane.showMessageDialog(null, "Ya tiene una cita registrada para esta especialidad en este mes.");
+            } else {
+                try {
+
+                    // Crear un nuevo objeto Paciente
+                    Pacientes paciente = new Pacientes();
+
+                    // Configurar los atributos del paciente con los valores de los campos
+                    paciente.setNombre(nombre.getText());
+                    paciente.setApellido(apellido.getText());
+                    paciente.setEspecialidad(BoxEspecialidad.getSelectedItem().toString()); // Obtener la especialidad seleccionada del JComboBox
+                    paciente.setDoctor(BoxMedico.getText());
+                    paciente.setCedula(Long.parseLong(cedula.getText()));
+                    paciente.setTelefono(Long.parseLong(telefono.getText()));
+                    paciente.setFecha(Long.parseLong(BoxDia.getText() + BoxMes.getText() + BoxAño.getText()));
+
+                    // Guardar la información del paciente en el archivo PacienteRecords.txt
+                    guardarPacienteEnArchivo(paciente);
+
+                    guardarCitaMedico(Integer.parseInt(BoxMedico.getText()));
+                    // Limpia los campos después de crear el paciente (opcional)
+                    limpiarCampos();
+
+                    JOptionPane.showMessageDialog(null, "Paciente registrado correctamente.");
+                } catch (NumberFormatException e) {
+                    // Manejar el caso en que no se pueda convertir algún campo de texto a número
+                    JOptionPane.showMessageDialog(null, "Error: Ingrese valores numéricos válidos en los campos de cédula, teléfono y fecha.");
+                }
+
+                cargarDatosEnTabla(allPData12);
+            }
 
         }
     }//GEN-LAST:event_AsignarCitaActionPerformed
@@ -902,19 +904,18 @@ public class RegistrarPacientesFrame extends javax.swing.JFrame {
         BoxAño.setText("");
     }
 
-  
-
     private boolean validarCantidadCitas(int idMedico) {
-        boolean permitirCita = false;
-
         try (BufferedReader lector = new BufferedReader(new FileReader("MedicosRecords.txt"))) {
             String linea;
             while ((linea = lector.readLine()) != null) {
                 String[] campos = linea.split(";");
-                if (Integer.parseInt(campos[0]) == idMedico) {
+                System.out.println("ID del médico en el archivo: " + campos[0]);
+                System.out.println("ID del médico proporcionado: " + idMedico);
+                if (campos[0].equals(String.valueOf(idMedico))) {
                     int citasAtendidas = Integer.parseInt(campos[6]);
+                    System.out.println("Citas atendidas del médico: " + citasAtendidas);
                     if (citasAtendidas <= 9) {
-                        permitirCita = true;
+                        return true;
                     }
                     break; // No necesitamos seguir buscando
                 }
@@ -924,7 +925,7 @@ public class RegistrarPacientesFrame extends javax.swing.JFrame {
             e.printStackTrace();
         }
 
-        return permitirCita;
+        return false;
     }
 
     /**
@@ -964,6 +965,37 @@ public class RegistrarPacientesFrame extends javax.swing.JFrame {
             }
         });
     }
+
+    private boolean validarMismaEspecialidadMismoMes(String cedulaPaciente, String especialidad, int mes) {
+    File archivoCitas = new File("PacienteRecords.txt");
+    if (!archivoCitas.exists()) {
+        JOptionPane.showMessageDialog(null, "El archivo PacienteRecords.txt no existe");
+        return false;
+    }
+
+    try (BufferedReader lector = new BufferedReader(new FileReader(archivoCitas))) {
+        String linea;
+        while ((linea = lector.readLine()) != null) {
+            String[] campos = linea.split(";");
+            if (campos[4].equals(cedulaPaciente) && campos[2].equals(especialidad)) {
+                String fechaCita = campos[6];
+                int diaCita = Integer.parseInt(fechaCita.substring(0, 2));
+                int mesCita = Integer.parseInt(fechaCita.substring(2, 4));
+                int añoCita = Integer.parseInt(fechaCita.substring(4, 8));
+
+                if (mesCita == mes) {
+                    JOptionPane.showMessageDialog(null, "Ya tiene una cita registrada para esta especialidad en este mes.");
+                    return true;
+                }
+            }
+        }
+    } catch (IOException e) {
+        JOptionPane.showMessageDialog(null, "Error al leer el archivo CitasRecords.txt");
+        e.printStackTrace();
+    }
+    return false;
+}
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.Button AsignarCita;
