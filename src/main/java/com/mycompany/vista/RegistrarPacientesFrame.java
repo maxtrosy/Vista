@@ -25,7 +25,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author maxtr
  */
-public class RegistrarPacientesForms extends javax.swing.JFrame {
+public class RegistrarPacientesFrame extends javax.swing.JFrame {
 
     private DefaultTableModel modeloTabla;
     ArrayList<Pacientes> todosPacientes = new ArrayList<>();
@@ -34,7 +34,7 @@ public class RegistrarPacientesForms extends javax.swing.JFrame {
     /**
      * Creates new form RegistrarPaciente
      */
-    public RegistrarPacientesForms() {
+    public RegistrarPacientesFrame() {
         initComponents();
         cargarDatosEnTabla(allPData12);
         cargarEspecialidades(JTable_MedicosDisponibles);
@@ -91,6 +91,8 @@ public class RegistrarPacientesForms extends javax.swing.JFrame {
         allPData12 = new javax.swing.JTable();
         jScrollPane4 = new javax.swing.JScrollPane();
         JTable_MedicosDisponibles = new javax.swing.JTable();
+        jPanel2 = new javax.swing.JPanel();
+        Salir = new javax.swing.JButton();
 
         jRadioButtonMenuItem1.setSelected(true);
         jRadioButtonMenuItem1.setText("jRadioButtonMenuItem1");
@@ -132,7 +134,7 @@ public class RegistrarPacientesForms extends javax.swing.JFrame {
                 .addComponent(Id_Medico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BoxMedico, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(7, Short.MAX_VALUE))
         );
         panel7Layout.setVerticalGroup(
             panel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -348,7 +350,7 @@ public class RegistrarPacientesForms extends javax.swing.JFrame {
             .addGroup(panel6Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(label5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(telefono, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -369,16 +371,15 @@ public class RegistrarPacientesForms extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(panel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(panel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(panel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(panel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(panel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(panel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(panel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(panel13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(panel14, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(panel11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(panel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(panel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(75, 75, 75)
                 .addComponent(panel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36))
@@ -518,6 +519,30 @@ public class RegistrarPacientesForms extends javax.swing.JFrame {
                 .addGap(65, 65, 65))
         );
 
+        Salir.setText("Salir");
+        Salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SalirActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Salir, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Salir, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout panel1Layout = new javax.swing.GroupLayout(panel1);
         panel1.setLayout(panel1Layout);
         panel1Layout.setHorizontalGroup(
@@ -531,7 +556,9 @@ public class RegistrarPacientesForms extends javax.swing.JFrame {
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panel1Layout.createSequentialGroup()
                         .addComponent(panel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 1, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 9, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         panel1Layout.setVerticalGroup(
@@ -541,13 +568,17 @@ public class RegistrarPacientesForms extends javax.swing.JFrame {
                     .addGroup(panel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel1Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                .addComponent(panel9, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(52, 52, 52))
+                .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(panel9, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(panel1Layout.createSequentialGroup()
+                        .addGap(196, 196, 196)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -556,8 +587,8 @@ public class RegistrarPacientesForms extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(panel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(panel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -670,69 +701,102 @@ public class RegistrarPacientesForms extends javax.swing.JFrame {
 
     private void AsignarCitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AsignarCitaActionPerformed
 
-        Boolean idVerified = false;
+         Boolean idVerified = false;
 
-        for (int i : idMedicosDisponibles) {
-            if (Integer.valueOf(BoxMedico.getText()) == i) {
-                idVerified = true;
-            }
+    for (int i : idMedicosDisponibles) {
+        if (Integer.valueOf(BoxMedico.getText()) == i) {
+            idVerified = true;
         }
+    }
 
-        if (nombre.getText().isEmpty()
-                || apellido.getText().isEmpty()
-                || BoxEspecialidad.getSelectedItem() == null // Verificar si no se ha seleccionado una especialidad
-                || BoxMedico.getText().isEmpty()
-                || cedula.getText().isEmpty()
-                || telefono.getText().isEmpty()
-                || BoxDia.getText().isEmpty()
-                || BoxMes.getText().isEmpty()
-                || BoxAño.getText().isEmpty()) {
+    if (nombre.getText().isEmpty()
+            || apellido.getText().isEmpty()
+            || BoxEspecialidad.getSelectedItem() == null // Verificar si no se ha seleccionado una especialidad
+            || BoxMedico.getText().isEmpty()
+            || cedula.getText().isEmpty()
+            || telefono.getText().isEmpty()
+            || BoxDia.getText().isEmpty()
+            || BoxMes.getText().isEmpty()
+            || BoxAño.getText().isEmpty()) {
 
-            JOptionPane.showMessageDialog(null, "Complete todos los campos.");
+        JOptionPane.showMessageDialog(null, "Complete todos los campos.");
+    } else {
+        int dia = Integer.parseInt(BoxDia.getText());
+        int mes = Integer.parseInt(BoxMes.getText());
+        int año = Integer.parseInt(BoxAño.getText());
+        LocalDate fechaActual = LocalDate.now();
+        LocalDate fechaSeleccionada = LocalDate.of(año, mes, dia);
+        // Validar dia, mes y año
+        if (dia < 0 || dia > 31 || mes < 0 || mes > 12 || año != 2024) {
+            JOptionPane.showMessageDialog(null, "Fecha Inválida. Ingrese una válida.");
+        } else if (fechaSeleccionada.isBefore(fechaActual)) {
+            JOptionPane.showMessageDialog(null, "La fecha seleccionada es anterior a la fecha actual.");
+        } else if (!idVerified) {
+            JOptionPane.showMessageDialog(null, "ID Inválido. Ingrese uno válido.");
+        } else if (!validarCantidadCitas(Integer.parseInt(BoxMedico.getText()))) {
+            JOptionPane.showMessageDialog(null, "El médico seleccionado ya tiene 10 citas atendidas. No se pueden asignar más citas.");
         } else {
-            int dia = Integer.parseInt(BoxDia.getText());
-            int mes = Integer.parseInt(BoxMes.getText());
-            int año = Integer.parseInt(BoxAño.getText());
-            LocalDate fechaActual = LocalDate.now();
-            LocalDate fechaSeleccionada = LocalDate.of(año, mes, dia);
-            // Validar dia, mes y año
-            if ((dia < 0 || dia > 31 || mes < 0 || mes > 12 || año != 2024) || fechaSeleccionada.isBefore(fechaActual)) {
-                JOptionPane.showMessageDialog(null, "Fecha Invalida. Ingrese una valida");
-            } else if (idVerified == false) {
-                JOptionPane.showMessageDialog(null, "Id Invalida. Ingrese una valida");
-            } else {
-                try {
+            try {
+                // Crear un nuevo objeto Paciente
+                Pacientes paciente = new Pacientes();
 
-                    // Crear un nuevo objeto Paciente
-                    Pacientes paciente = new Pacientes();
+                // Configurar los atributos del paciente con los valores de los campos
+                paciente.setNombre(nombre.getText());
+                paciente.setApellido(apellido.getText());
+                paciente.setEspecialidad(BoxEspecialidad.getSelectedItem().toString()); // Obtener la especialidad seleccionada del JComboBox
+                paciente.setDoctor(BoxMedico.getText());
+                paciente.setCedula(Long.parseLong(cedula.getText()));
+                paciente.setTelefono(Long.parseLong(telefono.getText()));
+                paciente.setFecha(Long.parseLong(BoxDia.getText() + BoxMes.getText() + BoxAño.getText()));
 
-                    // Configurar los atributos del paciente con los valores de los campos
-                    paciente.setNombre(nombre.getText());
-                    paciente.setApellido(apellido.getText());
-                    paciente.setEspecialidad(BoxEspecialidad.getSelectedItem().toString()); // Obtener la especialidad seleccionada del JComboBox
-                    paciente.setDoctor(BoxMedico.getText());
-                    paciente.setCedula(Long.parseLong(cedula.getText()));
-                    paciente.setTelefono(Long.parseLong(telefono.getText()));
-                    paciente.setFecha(Long.parseLong(BoxDia.getText() + BoxMes.getText() + BoxAño.getText()));
+                // Guardar la información del paciente en el archivo PacienteRecords.txt
+                guardarPacienteEnArchivo(paciente);
 
-                    // Guardar la información del paciente en el archivo PacienteRecords.txt
-                    guardarPacienteEnArchivo(paciente);
+                guardarCitaMedico(Integer.parseInt(BoxMedico.getText()));
+                // Limpia los campos después de crear el paciente (opcional)
+                limpiarCampos();
 
-                    guardarCitaMedico(Integer.parseInt(BoxMedico.getText()));
-                    // Limpia los campos después de crear el paciente (opcional)
-                    limpiarCampos();
-
-                    JOptionPane.showMessageDialog(null, "Paciente registrado correctamente.");
-                } catch (NumberFormatException e) {
-                    // Manejar el caso en que no se pueda convertir algún campo de texto a número
-                    JOptionPane.showMessageDialog(null, "Error: Ingrese valores numéricos válidos en los campos de cédula, teléfono y fecha.");
-                }
-
-                cargarDatosEnTabla(allPData12);
+                JOptionPane.showMessageDialog(null, "Paciente registrado correctamente.");
+            } catch (NumberFormatException e) {
+                // Manejar el caso en que no se pueda convertir algún campo de texto a número
+                JOptionPane.showMessageDialog(null, "Error: Ingrese valores numéricos válidos en los campos de cédula, teléfono y fecha.");
             }
+
+            cargarDatosEnTabla(allPData12);
+        }
 
         }
     }//GEN-LAST:event_AsignarCitaActionPerformed
+    private void guardarCitaMedico(int id) {
+        // Acceder a archivo medicos
+        File archivoMedicos = new File("MedicosRecords.txt");
+        if (!archivoMedicos.exists()) {
+            JOptionPane.showMessageDialog(null, "El archivo MedicosRecords.txt no existe");
+            return;
+        }
+
+        try (BufferedReader lector = new BufferedReader(new FileReader(archivoMedicos))) {
+            StringBuilder newData = new StringBuilder();
+            String linea;
+            while ((linea = lector.readLine()) != null) {
+                String[] campos = linea.split(";");
+                if (Integer.parseInt(campos[0]) == id) {
+                    int citasAtendidas = Integer.parseInt(campos[6]) + 1;
+                    campos[6] = String.valueOf(citasAtendidas);
+                }
+                // Reconstruir la línea con el campo actualizado
+                newData.append(String.join(";", campos)).append("\n");
+            }
+
+            // Escribir el nuevo contenido al archivo
+            try (BufferedWriter escritor = new BufferedWriter(new FileWriter("MedicosRecords.txt"))) {
+                escritor.write(newData.toString());
+            }
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(null, "Error al leer o escribir en el archivo MedicosRecords.txt");
+            e.printStackTrace();
+        }
+    }
 
     private void BoxEspecialidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoxEspecialidadActionPerformed
         // TODO add your handling code here:
@@ -757,6 +821,10 @@ public class RegistrarPacientesForms extends javax.swing.JFrame {
     private void BoxMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoxMedicoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_BoxMedicoActionPerformed
+
+    private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
+        dispose();
+    }//GEN-LAST:event_SalirActionPerformed
     private void cargarEspecialidades(JTable tabla) {
 
         String[] especialidades = {"Cardiología", "Dermatología", "Endocrinología", "Gastroenterología", "Neurología", "Oncología", "Pediatría", "Psiquiatría", "Traumatología", "Urología"};
@@ -833,53 +901,30 @@ public class RegistrarPacientesForms extends javax.swing.JFrame {
         BoxMes.setText("");
         BoxAño.setText("");
     }
- 
-    private void guardarCitaMedico(int id) {
-        
-        System.out.println("Entro a guardarcitamedico ");
-        
-        // Acceder a archivo medicos
-        File archivoMedicos = new File("MedicosRecords.txt");
-        if (!archivoMedicos.exists()) {
-            JOptionPane.showMessageDialog(null, "El archivo MedicosRecords.txt no existe");
-            return;
-        }
 
-        try (BufferedReader lector = new BufferedReader(new FileReader(archivoMedicos))) {
+  
+
+    private boolean validarCantidadCitas(int idMedico) {
+        boolean permitirCita = false;
+
+        try (BufferedReader lector = new BufferedReader(new FileReader("MedicosRecords.txt"))) {
             String linea;
             while ((linea = lector.readLine()) != null) {
                 String[] campos = linea.split(";");
-                System.out.println("campos[0]: "+campos[0]);
-                
-                if (Integer.parseInt(campos[0])==id) {
-
-                    int a = Integer.parseInt(campos[6]) + 1;
-                    campos[6] = "" + a;
-                    
-                    System.out.println("Id: "+campos[0]+"Medico: "+campos[1]+" citas atendidas se cambio y esta en: "+campos[6]);
-
-                    for (int i = 0; i < 6; i++) {
-                        linea += campos[i] + ";";
+                if (Integer.parseInt(campos[0]) == idMedico) {
+                    int citasAtendidas = Integer.parseInt(campos[6]);
+                    if (citasAtendidas <= 9) {
+                        permitirCita = true;
                     }
-
-                    // Una vez que se haya guardado la nueva linea se reescribe el archivo en esa posicion
-                    try (BufferedWriter escritor = new BufferedWriter(new FileWriter("MedicosRecords.txt", true))) {
-                        // Escribir la información básica del paciente en el archivo
-                        escritor.write(linea);
-                        escritor.newLine(); // Agregar una nueva línea para separar las citas
-
-                        // Escribir las citas asignadas del paciente
-                    } catch (IOException e) {
-                        JOptionPane.showMessageDialog(null, "Error al guardar la información del medico en el archivo.");
-                    }
-
+                    break; // No necesitamos seguir buscando
                 }
             }
         } catch (IOException e) {
-            JOptionPane.showMessageDialog(null, "Error al leer el archivo MedicosRecords.txt");
+            JOptionPane.showMessageDialog(null, "Error al leer el archivo de médicos.");
             e.printStackTrace();
         }
 
+        return permitirCita;
     }
 
     /**
@@ -899,21 +944,23 @@ public class RegistrarPacientesForms extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(RegistrarPacientesForms.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RegistrarPacientesFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(RegistrarPacientesForms.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RegistrarPacientesFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(RegistrarPacientesForms.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RegistrarPacientesFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(RegistrarPacientesForms.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RegistrarPacientesFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new RegistrarPacientesForms().setVisible(true);
+                new RegistrarPacientesFrame().setVisible(true);
             }
         });
     }
@@ -928,6 +975,7 @@ public class RegistrarPacientesForms extends javax.swing.JFrame {
     private java.awt.Button EliminarCita;
     private java.awt.Label Id_Medico;
     public javax.swing.JTable JTable_MedicosDisponibles;
+    private javax.swing.JButton Salir;
     private javax.swing.JTable allPData12;
     private java.awt.TextField apellido;
     private java.awt.Button button3;
@@ -935,6 +983,7 @@ public class RegistrarPacientesForms extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;

@@ -1,4 +1,4 @@
-0000;Pedro;Garcia;Cardiología;1001001;3001001001;0
+0000;Pedro;Garcia;Cardiología;1001001;3001001001;10
 0001;Maria;Rodriguez;Dermatología;1001002;3001001002;0
 0002;Carlos;Fernandez;Endocrinología;1001003;3001001003;0
 0003;Laura;Lopez;Gastroenterología;1001004;3001001004;0
@@ -47,4 +47,4 @@
 0046;Juan;Ortiz;Pediatría;1001047;3001001047;0
 0047;Maria;Cabrera;Psiquiatría;1001048;3001001048;0
 0048;Carlos;Santos;Traumatología;1001049;3001001049;0
-0049;Laura;Blanco;Urología;1001050;3001001050;0
+0049;Laura;Blanco;Urología;1001050;3001001050;00004;Juan;Martinez;Neurología;1001005;3001001005;00004;Juan;Martinez;Neurología;1001005;3001001005

@@ -10,9 +10,8 @@ package com.mycompany.vista;
  */
 public class Main extends javax.swing.JFrame {
 
-    
     Pacientes pacientes = new Pacientes();
-    
+
     /**
      * Creates new form Main
      */
@@ -61,6 +60,11 @@ public class Main extends javax.swing.JFrame {
 
         button1.setLabel("Citas");
         button1.setName(""); // NOI18N
+        button1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button1ActionPerformed(evt);
+            }
+        });
 
         button2.setLabel("Medicos");
         button2.addActionListener(new java.awt.event.ActionListener() {
@@ -79,9 +83,8 @@ public class Main extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addGroup(panel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(button3, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
-                    .addGroup(panel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(button1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(button2, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)))
+                    .addComponent(button1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(button2, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE))
                 .addContainerGap(42, Short.MAX_VALUE))
         );
         panel4Layout.setVerticalGroup(
@@ -121,8 +124,12 @@ public class Main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
-        // TODO add your handling code here:
+        new RegistrarMedicosFrame().setVisible(true);
     }//GEN-LAST:event_button2ActionPerformed
+
+    private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
+        new RegistrarPacientesFrame().setVisible(true);
+    }//GEN-LAST:event_button1ActionPerformed
 
     /**
      * @param args the command line arguments
