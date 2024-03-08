@@ -1,0 +1,9 @@
+juan;rojas;Cardiología;10;1047040718;31450949;12122024
+xd;Rojas;Endocrinología;2;120238;3145094952;252024
+juan;deijr;Gastroenterología;3;12312;3322;262024
+all;al;Endocrinología;2;12;12;12122024
+juan;rojasas;Pediatría;16;12;11;12122024
+e;e;Neurología;4;1;1;2262024
+asd;as;Neurología;14;112;112;12122024
+Jose;arrieta;Neurología;4;51616515;31615615;31032024
+juan;rojas;Gastroenterología;13;120319;1212;12122024
