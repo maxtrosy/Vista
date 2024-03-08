@@ -734,7 +734,7 @@ public class RegistrarPacientesFrame extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Id Invalida. Ingrese una valida");
             } else if (validarCantidadCitas(Integer.parseInt(BoxMedico.getText()))) {
                 JOptionPane.showMessageDialog(null, "El médico ya ha alcanzado el límite de citas.");
-            } else if (validarMismaEspecialidadMismoMes(cedula.getText(), BoxEspecialidad.getSelectedItem().toString(), mes)) {
+
                 JOptionPane.showMessageDialog(null, "Ya tiene una cita registrada para esta especialidad en este mes.");
             } else {
                 try {
